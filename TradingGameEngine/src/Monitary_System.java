@@ -27,7 +27,7 @@ public class Monitary_System {
         //Remove Player item with removeitem(item, amountsold);
         
         File file =
-                    new File("src/Items/"+item+".item");
+                    new File("Items/"+item+".item");
             Scanner sc = new Scanner(file);
 
         
