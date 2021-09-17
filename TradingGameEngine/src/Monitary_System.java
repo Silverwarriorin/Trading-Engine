@@ -6,7 +6,7 @@ public class Monitary_System {
 
 
 
-    public int SellItem(int AmountSold, String item, String port) throws FileNotFoundException {
+    public void SellItem(int AmountSold, String item, String port) throws FileNotFoundException {
 
         File file2 =
                 new File("src/Ports/"+port+".portdata");
@@ -14,16 +14,30 @@ public class Monitary_System {
 
         if(por.hasNext(item))
         {
-            File file =
+            
+            InitiateTrade(AmountSold, item, port);
+        }
+        else{
+            ItemNotFound(item);
+        }
+
+    }
+    
+    public String InitiateTrade(int AmountSold, String item, String port) {
+        //Remove Player item with removeitem(item, amountsold);
+        
+        File file =
                     new File("src/Items/"+item+".item");
             Scanner sc = new Scanner(file);
 
-            return AmountSold * sc.nextInt();
-        }
-        else{
-            return 0;
-        }
-
+        
+        int moneyowed = AmountSold * sc.hasNextInt;
+        
+        //Give money with giveplayermoney(moneyowed);
+        
+        //Add to port inventory with appendinventoryport(port);
+        
+        System.out.println("Successfully traded " + AmountSold + " " + item);
     }
 }
 
